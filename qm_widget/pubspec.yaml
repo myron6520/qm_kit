@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
- qm_dart_ex:
+  qm_dart_ex:
     git:
       url: https://github.com/myron6520/qm_kit.git
       path: qm_dart_ex
