@@ -23,6 +23,7 @@ class QMInputWidget extends StatefulWidget {
   final Widget? left;
   final TextAlign textAlign;
   final void Function(String)? onInputChanged;
+  final void Function(String)? onSubmitted;
   final Color bottomBorderColor;
   final EdgeInsets? contentPadding;
   final bool showInputBottomBorder;
@@ -48,6 +49,7 @@ class QMInputWidget extends StatefulWidget {
     this.autofocus = false,
     this.obscureText = false,
     this.lengthLimiting = 0,
+    this.onSubmitted,
   });
 
   @override
@@ -91,6 +93,7 @@ class _QMInputWidgetState extends State<QMInputWidget> {
           widget.onInputChanged?.call(_);
           setState(() {});
         },
+        onSubmitted: (str) => widget.onSubmitted?.call(str),
       ).expanded;
   @override
   Widget build(BuildContext context) {
